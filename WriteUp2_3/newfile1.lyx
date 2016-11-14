@@ -1,0 +1,2475 @@
+#LyX 1.6.1 created this file. For more info see http://www.lyx.org/
+\lyxformat 345
+\begin_document
+\begin_header
+\textclass article
+\begin_preamble
+\date{ }
+\setlength{\parskip}{5pt}
+\setlength{\parsep}{5pt}
+\setlength{\headsep}{5pt}
+\setlength{\topskip}{5pt}
+\setlength{\topmargin}{5pt}
+\setlength{\topsep}{5pt}
+\setlength{\partopsep}{5pt}
+
+\linespread{0.5}
+
+\usepackage[compact]{titlesec}
+\titlespacing{\section}{20pt}{*5}{*5}
+\titlespacing{\subsection}{0pt}{*0}{*0}
+\titlespacing{\subsubsection}{0pt}{*0}{*0}
+
+\usepackage[left=2cm,top=1cm,right=2cm,nohead,foot=1cm]{geometry}
+
+\usepackage{lmodern}
+\end_preamble
+\use_default_options true
+\language english
+\inputencoding auto
+\font_roman default
+\font_sans default
+\font_typewriter default
+\font_default_family default
+\font_sc false
+\font_osf false
+\font_sf_scale 100
+\font_tt_scale 100
+
+\graphics default
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry false
+\use_amsmath 1
+\use_esint 1
+\cite_engine basic
+\use_bibtopic false
+\paperorientation portrait
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\defskip medskip
+\quotes_language english
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\author "" 
+\author "" 
+\end_header
+
+\begin_body
+
+\begin_layout Section*
+2.3 The Diffusion Equation
+\end_layout
+
+\begin_layout Section*
+2 Analytic solution
+\end_layout
+
+\begin_layout Paragraph*
+Question 1:
+\end_layout
+
+\begin_layout Standard
+Performing dimensional analysis:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $[\theta]=(Temperature);[x]=(Length);[t]=(Time);[\lambda]=\frac{(Length)^{2}}{(Time)};[k]=\frac{(Temperature)}{(Time)}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Eliminating length: 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $[\theta]=(Temperature);[t]=(Time);\left[\frac{\lambda}{x^{2}}\right]=\frac{1}{(Time)};[k]=\frac{(Temperature)}{(Time)}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Eliminating temperature:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $[t]=(Time);\left[\frac{\lambda}{x^{2}}\right]=\frac{1}{(Time)};\left[\frac{k}{\theta}\right]=\frac{1}{(Time)}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Eliminating time it is found that 
+\begin_inset Formula $\frac{x}{\sqrt{\lambda t}}$
+\end_inset
+
+ and 
+\begin_inset Formula $\frac{\theta}{kt}$
+\end_inset
+
+ are dimensionless.
+ Thus 
+\begin_inset Formula $\left(\exists F\right)\frac{\theta}{kt}=F\left(\frac{x}{\sqrt{\lambda t}}\right)$
+\end_inset
+
+, where 
+\begin_inset Formula $F$
+\end_inset
+
+ is independent of k by construction.
+ Since physical laws are independent of system of measurement it is possible
+ to change the origin of the variable 
+\begin_inset Formula $\theta$
+\end_inset
+
+ so that 
+\begin_inset Formula $\theta-\theta_{0}=ktF\frac{x}{\sqrt{\lambda t}}$
+\end_inset
+
+, and make F independent of 
+\begin_inset Formula $\theta_{0}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Now substituting 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\theta\left(x,t\right)=\theta_{0}+ktF\left(\xi\right)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\theta_{t}=kF\left(\xi\right)+ktF'\left(\xi\right)\left(\frac{-x}{2\lambda^{\frac{1}{2}}t^{\frac{3}{2}}}\right)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\theta_{xx}=\frac{k}{\lambda}F''\left(\xi\right)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+By the Diffusion Equation:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $F''\left(\xi\right)+\frac{1}{2}\xi F'\left(\xi\right)-F\left(\xi\right)=0$
+\end_inset
+
+.
+ Differentiating this twice:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $F^{(4)}\left(\xi\right)+\frac{1}{2}\xi F'''\left(\xi\right)=0\Rightarrow F'''\left(\xi\right)=Ae^{-\frac{\xi^{2}}{4}}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $F''\left(\xi\right)=A\int_{0}^{\xi}e^{-\frac{a^{2}}{4}}da$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $F'\left(\xi\right)=A\xi\int_{0}^{\xi}e^{-\frac{a^{2}}{4}}da+2Ae^{-\frac{\xi^{2}}{4}}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $F\left(\xi\right)=A\left[\left(1+\frac{\xi^{2}}{2}\right)\left(\int_{0}^{\xi}e^{-\frac{a^{2}}{4}}da\right)+\xi e^{-\frac{\xi^{2}}{4}}\right]+c$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $=A\left[\xi e^{-\frac{\xi^{2}}{4}}-\left(1+\frac{\xi^{2}}{2}\right)\int_{\xi}^{\infty}e^{-\frac{a^{2}}{4}}da\right]+A\int_{0}^{\infty}e^{-\frac{a^{2}}{4}}da+c$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $=A\left[\xi e^{-\frac{\xi^{2}}{4}}-\left(1+\frac{\xi^{2}}{2}\right)\int_{\xi}^{\infty}e^{-\frac{a^{2}}{4}}da\right]+A\sqrt{\pi}+c$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Now use the boundary conditions.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\theta\left(x,t\right)\rightarrow\theta_{0}$
+\end_inset
+
+ as 
+\begin_inset Formula $x\rightarrow\infty$
+\end_inset
+
+ means that 
+\begin_inset Formula $F\rightarrow0$
+\end_inset
+
+ as 
+\begin_inset Formula $\xi\rightarrow\infty$
+\end_inset
+
+.
+ Thus 
+\begin_inset Formula $c=-A\sqrt{\pi}$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+Also, 
+\begin_inset Formula $\theta\left(0,t\right)=\theta_{0}+kt\Rightarrow F\left(0\right)=1$
+\end_inset
+
+ so 
+\begin_inset Formula $1=A\left(-\int_{0}^{\infty}e^{-\frac{a^{2}}{4}}da\right)\Rightarrow A=\frac{-1}{\sqrt{\pi}}$
+\end_inset
+
+.
+ That is:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $F\left(\xi\right)=\frac{1}{\sqrt{\pi}}\left[\left(1+\frac{1}{2}\xi^{2}\right)\int_{\xi}^{\infty}e^{-\frac{a^{2}}{4}}da-\xi e^{-\frac{\xi^{2}}{4}}\right]$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Paragraph*
+Question 2:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $U\left(X,T\right)=T\left(1-X\right)+V\left(X,T\right)\Rightarrow$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $U_{T}=1-X+V_{T}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $U_{XX}=V_{XX}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+By the Diffusion Equation: 
+\begin_inset Formula $U_{T}=1-X+V_{T}=V_{XX}=U_{XX}$
+\end_inset
+
+.
+ Now let 
+\begin_inset Formula $V=\sum_{n=1}^{\infty}q_{n}\left(T\right)sin\left(n\pi x\right)$
+\end_inset
+
+.
+ Expanding 
+\begin_inset Formula $1-X$
+\end_inset
+
+ also: 
+\begin_inset Formula $1-X=\sum_{n=1}^{\infty}Q_{n}\left(T\right)sin\left(n\pi X\right)\Rightarrow\frac{1}{2}Q_{n}\left(T\right)=\int_{0}^{1}\left(1-X\right)sin\left(n\pi X\right)dX=\frac{1}{n\pi}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+So: 
+\begin_inset Formula $\left(\forall X\right)\sum_{n=1}^{\infty}\left(\frac{2}{n\pi}+\dot{q}\left(T\right)+n^{2}\pi^{2}q_{n}\left(T\right)\right)sin\left(n\pi X\right)=0$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+That is 
+\begin_inset Formula $\frac{2}{n\pi}+\dot{q}\left(T\right)+n^{2}\pi^{2}q_{n}\left(T\right)=0$
+\end_inset
+
+.
+ Solving gives: 
+\begin_inset Formula $q_{n}\left(T\right)=\frac{-2}{n^{3}\pi^{3}}+c_{n}e^{-n^{2}\pi^{2}T}$
+\end_inset
+
+.
+ So 
+\begin_inset Formula $V=\sum_{n=1}^{\infty}\left(\frac{-2}{n^{3}\pi^{3}}\right)sin\left(n\pi X\right)+\sum_{n=1}^{\infty}c_{n}e^{-n^{2}\pi^{2}T}sin\left(n\pi X\right)$
+\end_inset
+
+.
+ Using the condition 
+\begin_inset Formula $U\left(X,0\right)=0$
+\end_inset
+
+, 
+\begin_inset Formula $c_{n}=\frac{2}{n^{3}\pi^{3}}$
+\end_inset
+
+.
+ So as 
+\begin_inset Formula $T\rightarrow\infty$
+\end_inset
+
+, 
+\begin_inset Formula $V\rightarrow\sum_{n=1}^{\infty}\left(\frac{-2}{n^{3}\pi^{3}}sin\left(n\pi X\right)\right)$
+\end_inset
+
+.
+ It remains to show that this is equal to 
+\begin_inset Formula $\frac{-1}{3}X+\frac{1}{2}X^{2}-\frac{1}{6}X^{3}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $2\int_{0}^{1}\left(\frac{-1}{3}X+\frac{1}{2}X^{2}-\frac{1}{6}X^{3}\right)sin\left(n\pi X\right)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $=2\left[\left(\frac{-1}{3}X+\frac{1}{2}X^{2}-\frac{1}{6}X^{3}\right)\left(\frac{-1}{n\pi}\right)cos\left(n\pi X\right)\right]_{0}^{1}-2\int_{0}^{1}\left(\frac{-1}{3}+X-\frac{1}{2}X^{2}\right)\left(\frac{-1}{n\pi}cos(n\pi X\right)dX$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $=-2\left[\left(\frac{-1}{3}+X-\frac{1}{2}X^{2}\right)\left(\frac{-1}{n^{2}\pi^{2}}\right)sin\left(n\pi X\right)\right]_{0}^{1}+2\int_{0}^{1}\left(1-X\right)\left(\frac{-1}{n^{2}\pi^{2}}\right)sin\left(n\pi X\right)dX$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $=2\left[\left(1-X\right)\left(\frac{1}{n^{3}\pi^{3}}\right)cos\left(n\pi X\right)\right]_{0}^{1}=\left(\frac{-2}{n^{3}\pi^{3}}\right)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Paragraph*
+Programming Task 1:
+\end_layout
+
+\begin_layout Standard
+The source and header files are in Appendix B (files ___).
+ The full printouts are in Appendix A (printouts ___).
+ The output of my program is six decimal places.
+ Firstly, 
+\begin_inset Formula $\frac{1}{10}e^{-n^{2}\pi^{2}T}>e^{-\left(n+1\right)^{2}\pi^{2}T}\Longleftrightarrow n>\frac{log\left(\frac{1}{10}\right)+1}{2}=0.65(2d.p.)$
+\end_inset
+
+.
+ Secondly, 
+\begin_inset Formula $e^{-n^{2}\pi^{2}T}<0.0000001\Longleftrightarrow n^{2}>7\frac{log\left(10\right)}{\pi^{2}T}$
+\end_inset
+
+.
+ In the worst case, 
+\begin_inset Formula $T=0.08$
+\end_inset
+
+, so 
+\begin_inset Formula $n>4.52(2d.p.)$
+\end_inset
+
+.
+ So if 
+\begin_inset Formula $n=5$
+\end_inset
+
+, then my answers will be accurate to six decimal places.
+ Figure 1 shows U against X at various values of T (the case of the finite
+ bar).
+ Figure 2 shows 
+\begin_inset Formula $\theta$
+\end_inset
+
+ against X for the same values of T.
+ In this latter case (of the semi-infinite bar) I chose 
+\begin_inset Formula $\theta_{0}=0$
+\end_inset
+
+ and 
+\begin_inset Formula $k=1$
+\end_inset
+
+ so that the initial conditions (apart from (4)) are the same.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename /home/mat/Qtiplots/Figure1.eps
+	scale 70
+	rotateAngle -90
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename /home/mat/Qtiplots/Figure2.eps
+	scale 70
+	rotateAngle -90
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The behaviour is similar in that the temperature decreases as X increases.
+ Also, in both cases, the temperature decreases more rapidly (at a given
+ value of X) for larger values of T.
+ The difference is that (for a given value of T) in the case of the finite
+ bar, the temperature decreases more rapidly as X increases and at X=1,
+ the temperature is 0 at any time.
+ In the case of the semi-infinite bar, the temperature is strictly positive
+ at all time greater than 0, with larger values of T having the higher temperatu
+res.
+\end_layout
+
+\begin_layout Paragraph*
+Question 3:
+\end_layout
+
+\begin_layout Standard
+The source and header files are in Appendix B (files __).
+ Using the Taylor expansion:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\frac{U\left(X,T+\delta T\right)-U\left(X,T\right)}{\delta T}=\frac{\partial U}{\partial T}+\frac{\delta T}{2!}\frac{\partial^{2}U}{\partial T^{2}}+\frac{\left(\delta T\right)^{2}}{3!}\frac{\partial^{3}U}{\partial T^{3}}+...$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\frac{U\left(X+\delta X,T\right)-2U\left(X,T\right)+U\left(X-\delta X,T\right)}{\left(\delta X\right)^{2}}=\frac{\partial^{2}U}{\partial X^{2}}+\frac{\left(\delta X\right)^{2}}{12}\frac{\partial^{4}U}{\partial X^{4}}+\frac{\left(\delta X\right)^{4}}{360}\frac{\partial^{6}U}{\partial X^{6}}+...$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+If sufficient differentiability is assumed, then 
+\begin_inset Formula $\frac{\partial^{n}U}{\partial T^{n}}=\frac{\partial^{2n}U}{\partial X^{2n}}$
+\end_inset
+
+.
+ So the discretization error is:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $Error=\left(\frac{\delta T}{2!}\frac{\partial^{2}U}{\partial T^{2}}-\frac{\left(\delta X\right)^{2}}{12}\frac{\partial^{4}U}{\partial X^{4}}\right)+\left(\frac{\left(\delta T\right)^{2}}{3!}\frac{\partial^{3}U}{\partial T^{3}}-\frac{\left(\delta X\right)^{4}}{360}\frac{\partial^{6}U}{\partial X^{6}}\right)+...=\frac{\partial^{4}U}{\partial X^{4}}\left(\delta X\right)^{2}\left(\frac{\nu}{2!}-\frac{1}{12}\right)+\frac{\partial^{6}U}{\partial X^{6}}\left(\delta X\right)^{4}\left(\frac{\nu^{2}}{3!}-\frac{1}{360}\right)+...$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+So the order of the error is 
+\begin_inset Formula $\mathcal{O}\left(\left(\delta X\right)^{2}\right)$
+\end_inset
+
+, unless 
+\begin_inset Formula $\nu=\frac{1}{6}$
+\end_inset
+
+, when it is 
+\begin_inset Formula $\mathcal{O}\left(\left(\delta X\right)^{4}\right)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+For the case 
+\begin_inset Formula $N=5$
+\end_inset
+
+ and 
+\begin_inset Formula $\nu=\frac{1}{2}$
+\end_inset
+
+, the tables of the analytic and numerical solutions and the value of the
+ error at the specified values of T are in Appendix A (printouts ___).
+ Now I will investigate the theoretical stability of the method.
+ 
+\end_layout
+
+\begin_layout Standard
+Let 
+\begin_inset Formula $\xi$
+\end_inset
+
+ be a constant (independent of m and n) defined by 
+\begin_inset Formula $U_{n}^{m+1}=\xi U_{n}^{m}$
+\end_inset
+
+.
+ i.e.
+ 
+\begin_inset Formula $U_{i}^{m}=\xi{}^{m}U_{i}^{0}$
+\end_inset
+
+.
+ Now express 
+\begin_inset Formula $U_{i}^{0}$
+\end_inset
+
+ in a complex Fourier series: 
+\begin_inset Formula $U_{i}^{0}=\sum_{k=0}^{N}A_{k}e^{ik\pi\left(\frac{n}{N}\right)}$
+\end_inset
+
+.
+ Since the finite difference equation is linear, it is only neccessary to
+ consider a general term of this.
+ It is seen that there is stability if and only if 
+\begin_inset Formula $\left|\xi\right|\leq1$
+\end_inset
+
+.
+ For the scheme in equation (11), 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $e^{ik\pi\left(\frac{n}{N}\right)}\xi^{m+1}=e^{ik\pi\left(\frac{n}{N}\right)}\xi^{m}+\nu\left(e^{ik\pi\left(\frac{n-1}{N}\right)}\xi^{m}-2e^{ik\pi\left(\frac{n}{N}\right)}\xi^{m}+e^{ik\pi\left(\frac{n+1}{N}\right)}\xi^{m}\right)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\xi=1+\nu\left(e^{-\frac{ik\pi}{N}}-2+e^{\frac{ik\pi}{N}}\right)=1+\nu\left(2cos\left(\frac{k\pi}{N}\right)-2\right)=-4\nu sin^{2}\left(\frac{k\pi}{2N}\right)$
+\end_inset
+
+.
+ So the condition for stability is:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\left|\xi\right|=\left|1-4\nu sin^{2}\left(\frac{k\pi}{2N}\right)\right|\leq1$
+\end_inset
+
+.
+ Since 
+\begin_inset Formula $\nu>0$
+\end_inset
+
+, 
+\begin_inset Formula $1-4\nu sin^{2}\left(\frac{k\pi}{2N}\right)\leq1$
+\end_inset
+
+ for all 
+\begin_inset Formula $\nu$
+\end_inset
+
+.
+ So:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $1-4\nu sin^{2}\left(\frac{k\pi}{2N}\right)\geq-1\Rightarrow\nu\leq\frac{1}{2sin^{2}\left(\frac{k\pi}{2N}\right)}$
+\end_inset
+
+.
+ Now, the summation is over 
+\begin_inset Formula $k=0,1...N$
+\end_inset
+
+, so 
+\begin_inset Formula $\nu\leq\frac{1}{2}$
+\end_inset
+
+ is the condition for stability.
+ The tables of the analytic and numerical solutions and the value of the
+ error at 
+\begin_inset Formula $\nu=\frac{1}{2}$
+\end_inset
+
+ and 
+\begin_inset Formula $\nu=\frac{2}{3}$
+\end_inset
+
+ illustrate this.
+ I have chosen 
+\begin_inset Formula $N=10$
+\end_inset
+
+ and 
+\begin_inset Formula $T=0.48$
+\end_inset
+
+ for this comparison, as it gives concise clear results.
+ For 
+\begin_inset Formula $\nu=\frac{1}{2}$
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Tabular
+<lyxtabular version="3" rows="12" columns="4">
+<features>
+<column alignment="center" valignment="top" width="0">
+<column alignment="center" valignment="top" width="0">
+<column alignment="center" valignment="top" width="0">
+<column alignment="center" valignment="top" width="0">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\noun off
+\color none
+X
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+U
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Analytic
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Error
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\noun off
+\color none
+0.000000
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\noun off
+\color none
+0.480000
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\noun off
+\color none
+0.480000
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\noun off
+\color none
+-0.000000
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\noun off
+\color none
+0.100000
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\noun off
+\color none
+0.403661
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\noun off
+\color none
+0.403675
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\noun off
+\color none
+0.000013
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\noun off
+\color none
+0.200000
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\noun off
+\color none
+0.336306
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\noun off
+\color none
+0.336332
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\noun off
+\color none
+0.000026
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\noun off
+\color none
+0.300000
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\noun off
+\color none
+0.276922
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\noun off
+\color none
+0.276957
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\noun off
+\color none
+0.000035
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\noun off
+\color none
+0.400000
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\noun off
+\color none
+0.224496
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\noun off
+\color none
+0.224537
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\noun off
+\color none
+0.000042
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\noun off
+\color none
+0.500000
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\noun off
+\color none
+0.178022
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\noun off
+\color none
+0.178065
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\noun off
+\color none
+0.000043
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\noun off
+\color none
+0.600000
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\noun off
+\color none
+0.136496
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\noun off
+\color none
+0.136537
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\noun off
+\color none
+0.000042
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\noun off
+\color none
+0.700000
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\noun off
+\color none
+0.098922
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\noun off
+\color none
+0.098957
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\noun off
+\color none
+0.000035
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\noun off
+\color none
+0.800000
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\noun off
+\color none
+0.064306
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\noun off
+\color none
+0.064332
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\noun off
+\color none
+0.000026
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\noun off
+\color none
+0.900000
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\noun off
+\color none
+0.031661
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\noun off
+\color none
+0.031675
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\noun off
+\color none
+0.000013
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\noun off
+\color none
+1.000000
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\noun off
+\color none
+0.000000
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\noun off
+\color none
+0.000000
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\noun off
+\color none
+0.000000
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+For 
+\begin_inset Formula $\nu=\frac{2}{3}$
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Tabular
+<lyxtabular version="3" rows="12" columns="4">
+<features>
+<column alignment="center" valignment="top" width="0">
+<column alignment="center" valignment="top" width="0">
+<column alignment="center" valignment="top" width="0">
+<column alignment="center" valignment="top" width="0">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+X
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+U
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Analytic
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Error
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\noun off
+\color none
+0.000000
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\noun off
+\color none
+0.480000
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\noun off
+\color none
+0.480000
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\noun off
+\color none
+0.000000
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\noun off
+\color none
+0.100000
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\noun off
+\color none
+6649117093.816221
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\noun off
+\color none
+0.403675
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\noun off
+\color none
+-6649117093.412546
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\noun off
+\color none
+0.200000
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\noun off
+\color none
+-12646450638.164291
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\noun off
+\color none
+0.336332
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\noun off
+\color none
+12646450638.500624
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\noun off
+\color none
+0.300000
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\noun off
+\color none
+17404370237.482307
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\noun off
+\color none
+0.276957
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\noun off
+\color none
+-17404370237.205349
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\noun off
+\color none
+0.400000
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\noun off
+\color none
+-20457137568.822617
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\noun off
+\color none
+0.224537
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\noun off
+\color none
+20457137569.047153
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\noun off
+\color none
+0.500000
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\noun off
+\color none
+21506496102.922276
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\noun off
+\color none
+0.178065
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\noun off
+\color none
+-21506496102.744209
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\noun off
+\color none
+0.600000
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\noun off
+\color none
+-20450648953.536060
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\noun off
+\color none
+0.136537
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\noun off
+\color none
+20450648953.672596
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\noun off
+\color none
+0.700000
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\noun off
+\color none
+17393871437.088352
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\noun off
+\color none
+0.098957
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\noun off
+\color none
+-17393871436.989395
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\noun off
+\color none
+0.800000
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\noun off
+\color none
+-12635951838.220335
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\noun off
+\color none
+0.064332
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\noun off
+\color none
+12635951838.284668
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\noun off
+\color none
+0.900000
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\noun off
+\color none
+6642628478.069665
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\noun off
+\color none
+0.031675
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\noun off
+\color none
+-6642628478.037991
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\noun off
+\color none
+1.000000
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\noun off
+\color none
+0.000000
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\noun off
+\color none
+0.000000
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\noun off
+\color none
+0.000000
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Figure 3 is the plot of 
+\begin_inset Formula $log\left(\left|Error\right|\right)$
+\end_inset
+
+ against 
+\begin_inset Formula $log\left(\frac{1}{N}\right)$
+\end_inset
+
+ for each of the different values of 
+\begin_inset Formula $\nu$
+\end_inset
+
+.
+ Again, I chose 
+\begin_inset Formula $T=0.48$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename /home/mat/Qtiplots/Figure3.eps
+	scale 90
+	rotateAngle -90
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Where the gradients of the lines are the orders of the methods (GIVE SIMILAR
+ PROOF TO BEFORE...).
+ Modelling the graphs in Figure 3 as straight lines, the gradient (measured
+ between the two extreme data points) of the lines representing 
+\begin_inset Formula $\nu=\frac{1}{12}$
+\end_inset
+
+, 
+\begin_inset Formula $\frac{1}{3}$
+\end_inset
+
+ and 
+\begin_inset Formula $\frac{1}{2}$
+\end_inset
+
+ are 2.03(2d.p.), 1.99(2d.p.) and 1.94(2d.p.) respectively.
+ The gradient of the line representing 
+\begin_inset Formula $\nu=\frac{1}{6}$
+\end_inset
+
+ is 4.03(2d.p.).
+ Thus my results are consistent with the theoretical orders of accuracy
+ of the scheme.
+\end_layout
+
+\end_body
+\end_document
